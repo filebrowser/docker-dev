@@ -1,0 +1,17 @@
+os: linux
+services: docker
+language: minimal
+install: skip
+addons:
+  apt:
+    packages:
+    - docker-ce
+    - pass
+script: docker build -t filebrowser/dev .
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: ./docker_login.sh && docker push filebrowser/dev && docker logout
+  on:
+    repo: filebrowser/docker-dev
+    branch: master
