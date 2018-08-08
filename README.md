@@ -5,6 +5,7 @@
 # File Browser development environment
 
 [![Build Status](https://img.shields.io/travis/com/filebrowser/docker-dev/master.svg?longCache=true&style=flat-square)](https://travis-ci.com/filebrowser/docker-dev/branches)
+[![Chat IRC](https://img.shields.io/badge/freenode-%23filebrowser-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23filebrowser)
 
 This is a utility repo used to have docker image [filebrowser/dev](https://hub.docker.com/r/filebrowser/dev/) automatically built periodically in [travis-ci.com/filebrowser](https://travis-ci.com/filebrowser).
 
