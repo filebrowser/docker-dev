@@ -12,13 +12,6 @@ COPY --from=base /go/bin /go/bin
 
 RUN apk --no-cache -U upgrade && apk --no-cache add ca-certificates yarn git curl dos2unix && \
   go get github.com/GeertJohan/go.rice/rice && \
-  curl -fsSL -o /go/bin/dep $( \
-    curl -s https://api.github.com/repos/golang/dep/releases/latest \
-    | grep "browser_download_url.*linux-amd64\"" \
-    | cut -d : -f 2,3 \
-    | tr -d \" \
-  ) && \
-  chmod +x /go/bin/dep && \
   curl -sL https://git.io/goreleaser -o /go/bin/goreleaser && \
   chmod +x /go/bin/goreleaser && \
   curl -fsSL https://download.docker.com/linux/static/edge/x86_64/docker-18.05.0-ce.tgz | tar xvz --strip-components=1 docker/docker -C /go/bin && \
@@ -30,3 +23,5 @@ RUN apk --no-cache -U upgrade && apk --no-cache add ca-certificates yarn git cur
     | tr -d \" \
   ) | tar xv -C /go/bin && \
   chmod + /go/bin/docker-credential-pass
+
+ENV GO111MODULE on

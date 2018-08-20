@@ -7,11 +7,11 @@ addons:
     packages:
     - docker-ce
     - pass
-script: docker build -t filebrowser/dev .
+script: docker build -t filebrowser/dev:mod .
 deploy:
   provider: script
   skip_cleanup: true
-  script: ./docker_login.sh && docker push filebrowser/dev && docker logout
+  script: ./docker_login.sh && docker push filebrowser/dev:mod && docker logout
   on:
     repo: filebrowser/docker-dev
-    branch: master
+    branch: mod
