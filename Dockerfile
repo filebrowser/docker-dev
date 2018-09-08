@@ -10,9 +10,7 @@ WORKDIR /go/src/github.com/filebrowser/filebrowser
 
 COPY --from=base /go/bin /go/bin
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-  sed -i -e "s/v[0-9]\.[0-9]/edge/g" /etc/apk/repositories  && \
-  apk --no-cache -U upgrade && apk --no-cache add ca-certificates yarn git curl dos2unix && \
+RUN apk --no-cache -U upgrade && apk --no-cache add ca-certificates yarn git curl dos2unix && \
   go get github.com/GeertJohan/go.rice/rice && \
   curl -fsSL -o /go/bin/dep $( \
     curl -s https://api.github.com/repos/golang/dep/releases/latest \
