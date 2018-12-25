@@ -6,8 +6,6 @@ RUN apk add -U --no-cache git && \
 
 FROM golang:alpine
 
-WORKDIR /go/src/github.com/filebrowser/filebrowser
-
 COPY --from=base /go/bin /go/bin
 COPY get_deps.sh ./get_deps.sh
 
