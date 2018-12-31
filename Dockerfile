@@ -1,6 +1,6 @@
 FROM golang:alpine AS base
 
-RUN apk add -U --no-cache git && \
+RUN apk add -U --no-cache git bash && \
   go get github.com/alecthomas/gometalinter && \
   gometalinter --install
 
