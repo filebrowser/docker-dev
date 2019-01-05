@@ -9,5 +9,5 @@
 
 This is a utility repo used to have docker image [filebrowser/dev](https://hub.docker.com/r/filebrowser/dev/) automatically built periodically in [travis-ci.com/filebrowser](https://travis-ci.com/filebrowser).
 
-- Docs for development/contributions are available at [filebrowser/community](https://github.com/filebrowser/community).
+- Documentation and contributing guidelines are available at [docs.filebrowser.xyz](https://docs.filebrowser.xyz/).
 - See the full repo list (backend, frontend, caddy, etc.) at [github.com/filebrowser](https://github.com/filebrowser).
